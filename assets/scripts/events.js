@@ -1,8 +1,9 @@
 'use strict'
 const handlebars = require('./templates/books-listing.handlebars')
+const api = require('./api')
 
-const getBook = function () {
-  apiCall.apiGet()
+const getBooks = function () {
+  api.getBooks()
     .then(showHandlebars)
     .catch(bookErrors)
 }
@@ -19,7 +20,7 @@ const bookErrors = function () {
 }
 
 const addHandlers = function () {
-  $('#best-button').on('click', getBook)
+  $('#best-button').on('click', getBooks)
 }
 
 module.exports = {
